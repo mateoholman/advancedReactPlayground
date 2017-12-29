@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
-import Toggle from './Toggle';
-import logo from './logo.svg';
+import Toggle from './CompoundComponent/Toggle';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
         <Toggle
           onToggle={on => console.log('toggle', on)}
-        />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-      </div>
+        >
+          <Toggle.Button />
+          <Toggle.On>Button On</Toggle.On>
+          <Toggle.Off>Button Off</Toggle.Off>
+        </Toggle>
     );
   }
 }
