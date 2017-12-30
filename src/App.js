@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Toggle from './CompoundComponent/Toggle';
+import FlexToggle from './FlexCompoundComp/FlexToggle';
 import './App.css';
 
 class App extends Component {
