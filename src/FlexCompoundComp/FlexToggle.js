@@ -66,6 +66,27 @@ class Toggle extends Component {
   }
 }
 
+function withToggle(Component) {
+  function Wrapper(props, context){
+    const toggleContext = context[TOGGLE_CONTEXT];
+    return (
+      <Component {...toggleContext} {...props} />
+    );
+  };
+
+  Wrapper.contextTypes = {
+    [TOGGLE_CONTEXT]: PropTypes.object.isRequired,
+  };
+
+  return Wrapper;
+}
+
+const MyToggle = withToggle(({on, toggle}) => (
+  <button onClick={toggle}>
+    {on ? 'on' : 'off'}
+  </button>
+));
+
 /*
  *
  *
@@ -93,4 +114,4 @@ function Switch({on, className = '', ...props}) {
   )
 }
 
-export default Toggle;
+export {Toggle, MyToggle};
