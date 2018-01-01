@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Toggle, MyToggle} from './FlexCompoundComp/FlexToggle';
+import {Toggle, MyToggle, MyEventComponent} from './HOCToggle/HOCToggle';
 import './App.css';
 
 class App extends Component {
@@ -14,6 +14,11 @@ class App extends Component {
           <Toggle.Button />
           <hr />
           <MyToggle />
+          <hr />
+          <MyEventComponent 
+            event="onClick"
+            on={e => alert(e.type)}
+          />
         </Toggle>
     );
   }

@@ -66,6 +66,13 @@ function withToggle(Component) {
   return Wrapper;
 }
 
+function MyEventComponent({on, event}){
+  const props = {[event]: on};
+  return (
+    <button {...props}>The {event} event</button>
+  )
+}
+
 const MyToggle = withToggle(({on, toggle}) => (
   <button onClick={toggle}>
     {on ? 'on' : 'off'}
@@ -99,4 +106,4 @@ function Switch({on, className = '', ...props}) {
   )
 }
 
-export {Toggle, MyToggle};
+export {Toggle, MyToggle, MyEventComponent};
